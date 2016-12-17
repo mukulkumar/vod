@@ -1,0 +1,14 @@
+<h1>History</h1>
+<div>
+	<ul>
+		<li ng-repeat="video in videos">
+			<a href="/videos/{{video.id}}">
+				<img src="{{video.thumbUrl}}" width="100" >
+				<h3>{{video.title}}</h3>
+				<p>{{video.description}}</p>
+				<p>Published on: {{ video.publishedDate | date: 'MM/dd/yyyy' }}</p>
+			</a>
+		</li>
+		<li ng-if="noHistory">No History!</li>
+	</ul>
+</div>

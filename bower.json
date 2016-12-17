@@ -1,0 +1,18 @@
+{
+  "name": "vodapp",
+  "version": "1.0.0",
+  "description": "Accedo programming test",
+  "authors": [
+    "Mukul Kumar"
+  ],
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-slick": "^0.2.1",
+    "ngstorage": "^0.3.11"
+  },
+  "resolutions": {
+    "angular": "1.6.0"
+  }
+}

@@ -1,0 +1,13 @@
+<section class="variable slider">
+
+	<slick  init-onload=true data="videos" lazy-load="ondemand" class="slider lazy" infinite="true" init-onload=true slides-to-show="8" slides-to-scroll="3" responsive="breakpoints" prev-arrow=".slick-prev" next-arrow=".slick-next" arrows="true">
+
+		<div ng-repeat="video in videos" ng-hide="!video.thumbUrl" >
+			<a href="/videos/{{video.id}}"><div style="min-height:209px;"><img src="{{video.thumbUrl}}"></div>
+				<h2 class="inline title">{{video.title | truncate: 15}}</h2>
+			</a>
+		</div>
+		<button type="button" class="slick-prev"><</button>
+		<button type="button" class="slick-next">></button>
+	</slick>
+</section>
