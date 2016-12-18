@@ -124,7 +124,6 @@ div.inline {
 	font-weight: normal;
 	margin: 8px 0;
 	text-align: center;
-	position: fixed;
 }
 
 #video-controls input[type=range] {
