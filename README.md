@@ -26,7 +26,7 @@ https://github.com/mukulkumar/vod.git
 
 #Demo
 -----------------------------------
-http://accedovodapp-vod.44fs.preview.openshiftapps.com
+https://testmediaapp.herokuapp.com
 
 
 -----------------------------------
