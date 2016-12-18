@@ -1,4 +1,4 @@
-angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
 	$routeProvider
 
@@ -18,7 +18,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'HistoryController'
 		})
 
-		.otherwise({redirectTo:'/'});
+		.otherwise({redirectTo: '/'});
 
 	$locationProvider.html5Mode(true);
 

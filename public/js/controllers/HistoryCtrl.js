@@ -1,3 +1,5 @@
+/* History Controller Module */
+
 angular.module('HistoryCtrl', []).controller('HistoryController', function ($scope, $http, $timeout, $localStorage) {
 
 	var videos = [];

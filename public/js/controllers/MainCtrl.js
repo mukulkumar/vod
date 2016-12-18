@@ -1,3 +1,5 @@
+/* Main Controller Module */
+
 angular.module('MainCtrl', []).controller('MainController', function ($scope, $http, $timeout, $localStorage) {
 
 	var videos = [];
@@ -22,7 +24,7 @@ angular.module('MainCtrl', []).controller('MainController', function ($scope, $h
 	$timeout(function () {
 		$scope.videos = videos;
 		$localStorage.videos = videos;
-	}, 2000);
+	}, 1000);
 
 	$scope.breakpoints = [
 		{
@@ -32,6 +34,13 @@ angular.module('MainCtrl', []).controller('MainController', function ($scope, $h
 				slidesToScroll: 3,
 				infinite: true,
 				dots: false
+			}
+		},
+		{
+			breakpoint: 800,
+			settings: {
+				slidesToShow: 6,
+				slidesToScroll: 2
 			}
 		},
 		{

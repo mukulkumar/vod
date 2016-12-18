@@ -1,3 +1,5 @@
+/* Video Controller Module */
+
 angular.module('VideosCtrl', [])
 
 	.controller('VideosController', function ($scope, $localStorage, $routeParams, $filter, $http) {

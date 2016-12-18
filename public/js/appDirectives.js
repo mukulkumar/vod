@@ -8,25 +8,21 @@ angular.module('vodVideo', [])
 			restrict: 'E'
 			, scope: {
 				video: '='
-				, autoPlay: '@'
 			}
 			, templateUrl: '/views/helpers/video.html'
 			, controller: ['$scope', '$element', '$http', function ($scope, $element) {
-				//$scope.autostart = $scope.autoPlay;
-				//console.log($scope.autoPlay);
+
 			}]
 		};
 	})
 
 	.directive('videoControls', function () {
 
-
 		return {
 
 			restrict: 'E'
 			, templateUrl: '/views/helpers/video-controls.html'
-			, controller: ['$scope', '$element', '$http', '$rootScope', function ($scope, $element) {
-				$scope.videodir = $element[0].previousElementSibling;
+			, controller: ['$scope', '$element', '$http', '$rootScope', function ($scope, $element, $timeout) {
 
 				$scope.videoElement = $element[0].previousElementSibling.children[0];
 
@@ -86,37 +82,37 @@ angular.module('vodVideo', [])
 				}
 			}],
 
-			link: function (scope, elem, attrs){
+			link: function (scope, elem, attrs) {
 
 				var video = elem[0].previousElementSibling.children[0];
 				var seekbar = elem.find('.seek-bar');
 				var playPause = elem.find('.play');
 
 
-				seekbar.bind("change", function() {
+				seekbar.bind("change", function () {
 					video.currentTime = video.duration * (this.value / 100);
 				});
 
-				elem.find('.volume-bar').bind("change", function() {
+				elem.find('.volume-bar').bind("change", function () {
 					video.volume = this.value;
 				});
 
-				video.addEventListener("timeupdate", function() {
+				video.addEventListener("timeupdate", function () {
 
 					seekbar.val((100 / video.duration) * video.currentTime);
 				});
 
-				video.addEventListener("ended", function() {
+				video.addEventListener("ended", function () {
 
 					window.location.href = '/';
 				});
 
-				seekbar.bind("mousedown", function() {
+				seekbar.bind("mousedown", function () {
 					video.pause();
 					playPause.html('Play');
 				});
 
-				seekbar.bind("mouseup", function() {
+				seekbar.bind("mouseup", function () {
 					video.play();
 					playPause.html('Pause');
 				});
